@@ -1,9 +1,11 @@
 /* Base styles */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
+    margin-top: 100px;
+    margin-left: 150px;
+    margin-right: 150px;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #33d7e3;
 }
 
 h1, h2, h3, h4, h5, h6 {
