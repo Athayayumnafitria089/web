@@ -1,85 +1,199 @@
-body {
-    margin-top: 100px;
-    margin-left: 150px;
-    margin-right: 150px;
-    padding: 0;
-    font-family: 'Gils Sans', 'Gils Sans', 'Calibri', 'Trebuchet MS', sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: black;
-    background-image: linear-gradient(to right, #26d0c5, #ac7e63);
-    -webkit-text-size-adjust: 100%;
+* {
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
 }
 
-ul{
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Braddon', 'Hurry Up', 'Comic Sans MS', cursive;
+    background: #F3EDC8;
+}
+
+.wrapper {
+    width: 1100px;
+    margin: auto;
+    position: relative;
+}
+
+.logo a {
+    font-size: 50px;
+    font-weight: 800;
+    float: left;
+    font-family: initial;
+    color: #5fc0e0;
+}
+
+.menu {
+    float: right;
+}
+
+nav {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    line-height: 80px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background: #92fc89;
+    z-index: 1;
+    border-bottom:1px solid #795fe0;
+}
+
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #94e1dc;
 }
 
-li {
+nav ul li {
     float: left;
 }
 
-li a, .dropbtn {
-    display: inline-block;
-    color: white;
+nav ul li a {
+    color: #E07A5F;
+    font-weight: lighter;
+    text-align: end;
+    padding: 0px 16px 0px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 100;
+}
+
+nav ul li a:hover {
+    text-decoration: overline;
+}
+
+section {
+    margin: auto;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.kolom {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.kolom .deskripsi {
+    font-size: 20px;
+    font-family: 'comic sans ms', cursive;
+    color:#000;
+}
+
+h2 {
+    font-family: 'comic sans ms';
+    font-weight: 300;
+    font-size: 35px;
+    margin-bottom: 20px;
+    color:#ffee00;
+    width: 100%;
+    line-height: 50px;
+}
+
+a.tbl-biru {
+    background: #e68787;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 15px 20px 15px 20px;
+    color: #69eec4;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+a.tbl-pink {
+    background: #BF3131;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 15px 20px 15px 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+a.tbl-pink:hover {
+    background: #eded6f;
+    text-decoration: none;
+}
+
+p {
+    margin: 10px 0px 10px 0px;
+    padding: 10px 0px 10px 0px;
+}
+
+.tengah {
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    width: 100%;
 }
 
-li a:hover, .dropdown.hover .dropbtn {
-    background-color: red;
-    transition: all 0,4s aese;
+#kontak {
+    background:#a9b0a9;
+    padding: 50px 0px 50px 0px;
 }
 
-li.dropdown {
-    display: inline-block;
+.footer {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
 }
 
-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-dropdown-content a {
-    color: black;
-<<<<<<< HEAD
-    padding: 12px 16px;
-=======
-    padding: 10px 10px;
->>>>>>> b36d0eef46f1e2e6766af9a89cb843a0f4196748
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-drodown:hover .dropdown-content {
-    display: block;
-<<<<<<< HEAD
-}
-=======
+.footer-section {
+    width: 20%;
+    margin: auto;
 }
 
 h3 {
-    color: #94e1dc;
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 1.5;
-    margin-top: 0;
-    margin-bottom: 1rem;
+    font-family: 'comic sans ms';
+    font-weight: 800;
+    font-family: 30px;
+    margin-bottom: 20px;
+    color: #F3EDC8;
+    width: 100%;
+    line-height: 50px;
 }
->>>>>>> b36d0eef46f1e2e6766af9a89cb843a0f4196748
+
+table, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+  }
+  th {
+    background-color: #96D4D4;
+}
+
+.submit {
+    background: #FF1700;
+    color: #FFFF00;
+    font-weight: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.submit:hover {
+    background: #E07A5F;
+    color: #1B4D3E;
+}
+
+.forms-group input[type="text"]:focus,
+.forms-group input[type="email"]:focus,
+.forms-group textarea:focus {
+    border: 1px solid #FF1700;
+}
+
+footer {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    line-height: 30px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background:#f19ee8;
+}
