@@ -8,7 +8,7 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: 'Braddon', 'Hurry Up', 'Comic Sans MS', cursive;
-    background: #F3EDC8;
+    background: #89d2e7;
 }
 
 .wrapper {
@@ -22,7 +22,7 @@ body {
     font-weight: 800;
     float: left;
     font-family: initial;
-    color: #5fc0e0;
+    color: #eff2f3;
 }
 
 .menu {
@@ -37,7 +37,7 @@ nav {
     position: sticky;
     position: -webkit-sticky;
     top: 0;
-    background: #92fc89;
+    background: #a766ed;
     z-index: 1;
     border-bottom:1px solid #795fe0;
 }
