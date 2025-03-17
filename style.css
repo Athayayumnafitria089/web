@@ -1,72 +1,81 @@
+/* Mengatur body dengan latar belakang gradasi */
 body {
-    height: 100vh; /* Mengatur tinggi body */
-    margin: 0;
+    height: 100vh; /* Mengatur tinggi body agar memenuhi layar penuh */
+    margin: 0; /* Menghapus margin default browser */
     background-image: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradasi dari merah muda ke kuning */
-    animation: gradientAnimation 5s ease infinite; /* Menambahkan animasi */
+    background-size: 200% 200%; /* Memastikan gradasi mencakup seluruh area */
+    animation: gradientAnimation 5s ease infinite; /* Menambahkan animasi gradasi */
 }
 
+/* Animasi untuk gradasi latar belakang */
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
+/* Navbar */
 .navbar {
-    list-style-type: none;
+    list-style-type: none; /* Menghilangkan bullet pada daftar */
 }
 
 .navbar > .dropdown {
-    display: inline-block;
+    display: inline-block; /* Membuat dropdown sejajar secara horizontal */
 }
 
 .navbar a {
-    text-decoration: none;
-    padding: 10px;
+    text-decoration: none; /* Menghilangkan garis bawah pada tautan */
+    padding: 10px; /* Memberikan ruang di sekitar teks tautan */
 }
 
+/* Dropdown Menu */
 .dropdown-menu {
-    display: none; /* Hide the dropdown by default */
+    display: none; /* Sembunyikan dropdown secara default */
 }
 
 .dropdown:hover .dropdown-menu {
-    display: block; /* Show the dropdown on hover */
+    display: block; /* Tampilkan dropdown saat hover */
 }
 
 .dropdown-menu li {
-    background-color: #f9f9f9;
+    background-color: #20b620; /* Warna latar dropdown menu */
 }
 
+/* Header */
 header h1 {
-    text-align: center;
+    text-align: center; /* Memusatkan teks header */
 }
 
+/* Form Input dan Textarea */
 form input, form textarea {
-    display: block;
-    margin-bottom: 10px;
+    display: block; /* Menampilkan elemen form sebagai blok */
+    margin-bottom: 10px; /* Memberikan jarak antar elemen form */
 }
 
+/* Tombol Submit Form */
 button {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #4CAF50; /* Warna tombol hijau */
+    color: white; /* Warna teks tombol putih */
 }
 
-/* Animasi Kartun */
+/* Animasi Kartun Lucu */
 .animated-cartoon {
-    position: absolute; /* Mengatur posisi absolut */
-    top: 50%; /* Pusat vertikal */
-    left: 50%; /* Pusat horizontal */
-    transform: translate(-50%, -50%); /* Memindahkan elemen ke tengah */
-    animation: bounce 2s infinite; /* Menambahkan animasi bounce */
+    position: absolute; /* Mengatur posisi absolut untuk kartun animasi */
+    top: 50%; /* Pusat vertikal pada layar */
+    left: 50%; /* Pusat horizontal pada layar */
+    transform: translate(-50%, -50%); /* Memindahkan elemen ke tengah layar */
+    animation: bounce 2s infinite; /* Menambahkan animasi bounce (melompat) */
 }
 
+/* Animasi Bounce untuk Kartun Lucu */
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0); /* Posisi awal */
+        transform: translateY(0); /* Posisi awal (tidak melompat) */
     }
     40% {
-        transform: translateY(-30px); /* Naik */
+        transform: translateY(-30px); /* Melompat ke atas sedikit lebih tinggi */
     }
     60% {
-        transform: translateY(-15px); /* Turun sedikit */
+        transform: translateY(-15px); /* Melompat ke atas lebih rendah */
     }
 }
