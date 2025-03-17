@@ -17,8 +17,25 @@ body {
 /* Navbar */
 .navbar {
     list-style-type: none; /* Menghilangkan bullet pada daftar */
+    display: flex; /* Mengatur menu menjadi baris */
+    justify-content: flex-end; /* Memposisikan menu ke kanan */
+    padding: 10px; /* Memberikan padding pada navbar */
+    margin: 0; /* Menghilangkan margin default */
 }
 
+.nav-button {
+    text-decoration: none; /* Menghilangkan garis bawah pada tautan */
+    background-color: #4CAF50; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    padding: 10px 15px; /* Memberikan ruang di sekitar teks tombol */
+    border-radius: 5px; /* Membuat sudut tombol melengkung */
+    margin-left: 10px; /* Memberikan jarak antar tombol */
+    transition: background-color 0.3s; /* Efek transisi saat hover */
+}
+
+.nav-button:hover {
+    background-color: #45a049; /* Warna saat hover */
+}
 .navbar > .dropdown {
     display: inline-block; /* Membuat dropdown sejajar secara horizontal */
 }
