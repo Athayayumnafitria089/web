@@ -8,12 +8,23 @@ body {
     min-height: 100vh; /* Ensures the body takes at least the full height of the viewport */
 }
 
+/* Logo Container */
+.logo-container {
+    position: absolute; /* Memposisikan elemen secara absolut */
+    top: 10px; /* Jarak dari atas */
+    left: 10px; /* Jarak dari kiri */
+}
+
+.logo {
+    width: 100px; /* Atur lebar logo sesuai kebutuhan */
+}
+
 /* Navigation Bar */
 nav {
     position: absolute; /* Position element absolutely */
     top: 10px; /* Distance from the top */
     right: 10px; /* Distance from the right edge */
-    background-color: #333; /* Keep original background color */
+    background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background for better visibility */
     padding: 10px; /* Add some padding around the nav */
     border-radius: 5px; /* Optional: Rounded corners */
 }
@@ -65,15 +76,4 @@ th, td {
 
 th {
     background-color: #f2f2f2; /* Keep original header background color */
-}
-
-/* Left-Aligned Photo */
-.photo-container {
-    position: absolute; /* Position element absolutely */
-    top: 10px; /* Distance from the top edge */
-    left: 10px; /* Distance from the left edge */
-}
-
-.photo-container img {
-    width: auto; /* Keep original aspect ratio of image */
 }
