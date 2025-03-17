@@ -8,7 +8,7 @@ body {
     min-height: 100vh; /* Ensures the body takes at least the full height of the viewport */
 }
 
-/* Animasi Container */
+/* GIF Container */
 .gif-container {
     position: absolute; /* Memposisikan elemen secara absolut */
     top: 10px; /* Jarak dari atas */
@@ -24,7 +24,7 @@ body {
 .logo-container {
     position: absolute; /* Memposisikan elemen secara absolut */
     top: 10px; /* Jarak dari atas */
-    left: 10px; /* Jarak dari kiri */
+    left: 120px; /* Jarak dari kiri untuk menghindari tumpang tindih dengan GIF */
 }
 
 .logo {
