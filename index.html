@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>"Welcome To Athaya's Library"</title>
+    <title>Welcome To Athaya's Library</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Athaya's Library</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Homepage</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="library.html">Library</a></li>
-    </nav>
-
-    <!-- Animasi Kartun-->
-    <div class="animated-cartoon">
-        <img src="images/cartoon.gif" alt="Kartun Lucu">
+    <!-- Menyisipkan GIF -->
+    <div class="gif-container">
+        <img src="images/Welcome.gif" alt="Selamat Datang" width="300" height="200" />
     </div>
 
-    <!-- Header-->
+    <!-- Menyisipkan Foto USU -->
+    <div class="photo-container">
+        <img src="images/usu.png" alt="Logo USU" width="300" height="200" />
+    </div>
+
+    <!-- Navbar -->
+    <nav>
+        <ul class="navbar">
+            <li class="dropdown"><a href="#" class="nav-button">Homepage</a></li>
+            <li class="dropdown"><a href="about.html" class="nav-button">About Me</a></li>
+            <li class="dropdown"><a href="library.html" class="nav-button">Library</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
     <header>
         <h1>Welcome to Athaya's Library</h1>
         <p>Explore knowledge and share your thoughts!</p>
     </header>
 
-    <!-- Visitor Form-->
+    <!-- Kerjasama -->
+    <p>Kerjasama Perpustakaan <a href="https://library.usu.ac.id" target="_blank">Perpustakaan Universitas Sumatera Utara</a></p>
+
+    <!-- Visitor Form -->
     <section id="visitor-form">
         <h2>Visitor Form</h2>
         <form action="tayataya0312@gmail.com" method="post" enctype="text/plain">
@@ -38,7 +47,7 @@
         </form>
     </section>
 
-    <!-- Suggestion Box-->
+    <!-- Suggestion Box -->
     <section id="suggestion-box">
         <h2>Suggestion Box</h2>
         <form action="tayataya0312@gmail.com" method="post" enctype="text/plain">
@@ -47,7 +56,7 @@
         </form>
     </section>
 
-    <!-- JavaScript-->
+    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
