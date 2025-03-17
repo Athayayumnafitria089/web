@@ -1,98 +1,77 @@
-/* Mengatur body dengan latar belakang gradasi */
+/* Global Styles */
 body {
-    height: 100vh; /* Mengatur tinggi body agar memenuhi layar penuh */
-    margin: 0; /* Menghapus margin default browser */
-    background-image: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradasi dari merah muda ke kuning */
-    background-size: 200% 200%; /* Memastikan gradasi mencakup seluruh area */
-    animation: gradientAnimation 5s ease infinite; /* Menambahkan animasi gradasi */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center; /* Center all text content */
 }
 
-/* Animasi untuk gradasi latar belakang */
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* Navigation Bar */
+nav {
+    position: absolute; /* Position element absolutely */
+    top: 10px; /* Distance from the top */
+    right: 10px; /* Distance from the right edge */
+    background-color: #333; /* Keep original background color */
+    padding: 10px; /* Add some padding around the nav */
+    border-radius: 5px; /* Optional: Rounded corners */
 }
 
-/* Navbar */
-.navbar {
-    list-style-type: none; /* Menghilangkan bullet pada daftar */
-    display: flex; /* Mengatur menu menjadi baris */
-    justify-content: flex-end; /* Memposisikan menu ke kanan */
-    padding: 10px; /* Memberikan padding pada navbar */
-    margin: 0; /* Menghilangkan margin default */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-button {
-    text-decoration: none; /* Menghilangkan garis bawah pada tautan */
-    background-color: #4CAF50; /* Warna latar belakang tombol */
-    color: white; /* Warna teks tombol */
-    padding: 10px 15px; /* Memberikan ruang di sekitar teks tombol */
-    border-radius: 5px; /* Membuat sudut tombol melengkung */
-    margin-left: 10px; /* Memberikan jarak antar tombol */
-    transition: background-color 0.3s; /* Efek transisi saat hover */
+nav ul li {
+    display: inline;
+    margin-right: 15px;
 }
 
-.nav-button:hover {
-    background-color: #45a049; /* Warna saat hover */
-}
-.navbar > .dropdown {
-    display: inline-block; /* Membuat dropdown sejajar secara horizontal */
-}
-
-.navbar a {
-    text-decoration: none; /* Menghilangkan garis bawah pada tautan */
-    padding: 10px; /* Memberikan ruang di sekitar teks tautan */
-}
-
-/* Dropdown Menu */
-.dropdown-menu {
-    display: none; /* Sembunyikan dropdown secara default */
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block; /* Tampilkan dropdown saat hover */
-}
-
-.dropdown-menu li {
-    background-color: #20b620; /* Warna latar dropdown menu */
+nav ul li a {
+    text-decoration: none;
+    color: white; /* Keep original text color */
+    font-weight: bold;
 }
 
 /* Header */
+header {
+    margin-top: 20px;
+}
+
 header h1 {
-    text-align: center; /* Memusatkan teks header */
+    font-size: 2.5em;
 }
 
-/* Form Input dan Textarea */
-form input, form textarea {
-    display: block; /* Menampilkan elemen form sebagai blok */
-    margin-bottom: 10px; /* Memberikan jarak antar elemen form */
+/* Centering Content */
+section#about-details {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-top: 20px; /* Add spacing above */
 }
 
-/* Tombol Submit Form */
-button {
-    background-color: #4CAF50; /* Warna tombol hijau */
-    color: white; /* Warna teks tombol putih */
+table {
+    border-collapse: collapse; /* Merge table borders */
+    width: 50%; /* Set table width */
 }
 
-/* Animasi Kartun Lucu */
-.animated-cartoon {
-    position: absolute; /* Mengatur posisi absolut untuk kartun animasi */
-    top: 50%; /* Pusat vertikal pada layar */
-    left: 50%; /* Pusat horizontal pada layar */
-    transform: translate(-50%, -50%); /* Memindahkan elemen ke tengah layar */
-    animation: bounce 2s infinite; /* Menambahkan animasi bounce (melompat) */
+th, td {
+    border: 1px solid #ddd; /* Add cell borders */
+    padding: 10px; /* Add padding for better spacing */
+    text-align: left; /* Align text to the left */
 }
 
-/* Animasi Bounce untuk Kartun Lucu */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0); /* Posisi awal (tidak melompat) */
-    }
-    40% {
-        transform: translateY(-30px); /* Melompat ke atas sedikit lebih tinggi */
-    }
-    60% {
-        transform: translateY(-15px); /* Melompat ke atas lebih rendah */
-    }
+th {
+    background-color: #f2f2f2; /* Keep original header background color */
+}
+
+/* Left-Aligned GIF and Image */
+.gif-container {
+    position: absolute; /* Position element absolutely */
+    top: 10px; /* Distance from the top edge */
+    left: 10px; /* Distance from the left edge */
+}
+
+.gif-container img {
+    width: auto; /* Keep original aspect ratio of image */
 }
