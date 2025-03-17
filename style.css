@@ -1,14 +1,39 @@
 body {
-    font-family: Arial, sans-serif;
+    height: 100vh; /* Mengatur tinggi body */
+    margin: 0;
+    background-image: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradasi dari merah muda ke kuning */
+    animation: gradientAnimation 5s ease infinite; /* Menambahkan animasi */
 }
 
-nav ul {
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.navbar {
     list-style-type: none;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+.navbar > .dropdown {
+    display: inline-block;
+}
+
+.navbar a {
+    text-decoration: none;
+    padding: 10px;
+}
+
+.dropdown-menu {
+    display: none; /* Hide the dropdown by default */
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block; /* Show the dropdown on hover */
+}
+
+.dropdown-menu li {
+    background-color: #f9f9f9;
 }
 
 header h1 {
@@ -23,4 +48,25 @@ form input, form textarea {
 button {
     background-color: #4CAF50;
     color: white;
+}
+
+/* Animasi Kartun */
+.animated-cartoon {
+    position: absolute; /* Mengatur posisi absolut */
+    top: 50%; /* Pusat vertikal */
+    left: 50%; /* Pusat horizontal */
+    transform: translate(-50%, -50%); /* Memindahkan elemen ke tengah */
+    animation: bounce 2s infinite; /* Menambahkan animasi bounce */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); /* Posisi awal */
+    }
+    40% {
+        transform: translateY(-30px); /* Naik */
+    }
+    60% {
+        transform: translateY(-15px); /* Turun sedikit */
+    }
 }
