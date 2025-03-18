@@ -58,6 +58,24 @@ nav ul li a {
     font-weight: bold;
 }
 
+/* Tombol On/Off Suara */
+button {
+    background-color: #4CAF50; /* Warna latar belakang hijau */
+    color: white; /* Warna teks putih */
+    border: none; /* Tanpa border */
+    padding: 10px 20px; /* Padding atas/bawah dan kiri/kanan */
+    text-align: center; /* Teks di tengah */
+    text-decoration: none; /* Tanpa garis bawah */
+    display: inline-block; /* Menampilkan tombol sebagai blok inline */
+    font-size: 16px; /* Ukuran font */
+    margin-top: 20px; /* Jarak dari elemen lainnya */
+}
+
+/* Efek hover pada tombol On/Off Suara */
+button:hover {
+    background-color: #45a049; /* Warna latar belakang saat hover */
+}
+
 /* Header */
 header {
     margin-top: 20px;

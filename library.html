@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library - Athaya's Library</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
 
 <nav>
     <ul>
-        <li><a href="index.html">Homepage</a></li>
-        <li><a href="about.html">About Me</a></li>
+        <li><a href="./index.html">Homepage</a></li>
+        <li><a href="./about.html">About Me</a></li>
         <li><a href="#">Library</a></li>
     </ul>
 </nav>
@@ -20,17 +21,18 @@
     <h1>Library Collection</h1>
 </header>
 
+<!-- Tombol On/Off Suara -->
+<button id="toggle-sound">Turn Sound On</button>
+
 <section id="book-list">
     <ul class="books">
+        <!-- Buku dengan suara saat disentuh -->
         <li onmouseover='speak("Buku 1: Pemrograman Web Dasar")'>Buku 1: Pemrograman Web Dasar</li>
         <li onmouseover='speak("Buku 2: Panduan CSS Animasi Modern")'>Buku 2: Panduan CSS Animasi Modern</li>
         <li onmouseover='speak("Buku 3: JavaScript untuk Pemula")'>Buku 3: JavaScript untuk Pemula</li>
     </ul>
 </section>
 
-<script src="script.js"></script>
-
-<!-- Tambahkan script.js di sini jika belum ada -->
 <script src="./script.js"></script>
 
 </body>
