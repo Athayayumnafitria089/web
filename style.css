@@ -58,25 +58,20 @@ nav ul li a {
     font-weight: bold;
 }
 
-/* Tombol On/Off Suara */
-button {
-    background-color: #4CAF50; /* Warna latar belakang hijau */
-    color: white; /* Warna teks putih */
+/* Tombol On/Off Suara (Ikon 🔊/🔇) */
+#toggle-sound {
+    font-size: 24px; /* Ukuran ikon suara */
+    background-color: transparent; /* Tanpa latar belakang */
     border: none; /* Tanpa border */
-    padding: 10px 20px; /* Padding atas/bawah dan kiri/kanan */
-    text-align: center; /* Teks di tengah */
-    text-decoration: none; /* Tanpa garis bawah */
-    display: inline-block; /* Menampilkan tombol sebagai blok inline */
-    font-size: 16px; /* Ukuran font */
-    margin-top: 20px; /* Jarak dari elemen lainnya */
+    cursor: pointer; /* Menampilkan kursor pointer saat hover */
 }
 
-/* Efek hover pada tombol On/Off Suara */
-button:hover {
-    background-color: #45a049; /* Warna latar belakang saat hover */
+/* Efek hover pada tombol suara (ikon) */
+#toggle-sound:hover {
+    color: #4CAF50; /* Ubah warna ikon saat hover menjadi hijau */
 }
 
-/* Header */
+/* Header Styles */
 header {
     margin-top: 20px;
 }
@@ -85,25 +80,25 @@ header h1 {
     font-size: 2.5em;
 }
 
-/* Centering Content */
+/* Centering Content for About Details Section */
 section#about-details {
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
-    margin-top: 20px; /* Add spacing above */
+    margin-top: 20px; /* Add spacing above section content */
 }
 
 table {
-    border-collapse: collapse; /* Merge table borders */
-    width: 50%; /* Set table width */
+    border-collapse: collapse; /* Merge table borders for cleaner look */
+    width: 50%; /* Set table width to half of the container width */
 }
 
 th, td {
-    border: 1px solid #ddd; /* Add cell borders */
-    padding: 10px; /* Add padding for better spacing */
-    text-align: left; /* Align text to the left */
+    border: 1px solid #ddd; /* Add cell borders for clarity */
+    padding: 10px; /* Add padding for better spacing between content and borders */
+    text-align: left; /* Align text to the left for readability in tables */
 }
 
 th {
-    background-color: #f2f2f2; /* Keep original header background color */
+    background-color: #f2f2f2; /* Light gray background for table headers to differentiate them from rows */
 }

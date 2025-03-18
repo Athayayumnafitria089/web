@@ -4,7 +4,7 @@ let soundEnabled = false; // Default: Suara dimatikan
 const toggleSoundButton = document.getElementById('toggle-sound');
 toggleSoundButton.addEventListener('click', () => {
    soundEnabled = !soundEnabled; // Toggle status suara
-   toggleSoundButton.textContent = soundEnabled ? 'Turn Sound Off' : 'Turn Sound On';
+   toggleSoundButton.textContent = soundEnabled ? '🔇' : '🔊'; // Ubah ikon tombol
 });
 
 // Event untuk tautan di navbar
@@ -13,10 +13,19 @@ document.querySelectorAll("nav ul li a").forEach(link => {
        if (soundEnabled) { // Hanya berbicara jika suara diaktifkan
            speak(link.textContent);
        }
-       link.style.color = "red";
+       link.style.color = "red"; // Ubah warna teks saat hover
    });
    link.addEventListener("mouseout", () => {
-       link.style.color = "black";
+       link.style.color = "black"; // Kembalikan warna teks saat mouse keluar
+   });
+});
+
+// Event untuk elemen lain seperti buku di halaman library
+document.querySelectorAll(".books li").forEach(book => {
+   book.addEventListener("mouseover", () => {
+       if (soundEnabled) { // Hanya berbicara jika suara diaktifkan
+           speak(book.textContent);
+       }
    });
 });
 
