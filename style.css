@@ -102,3 +102,43 @@ th, td {
 th {
     background-color: #f2f2f2; /* Light gray background for table headers to differentiate them from rows */
 }
+
+/* Gaya untuk item buku di library */
+.book-item {
+   text-align: center;
+   margin: 20px auto;
+   max-width: 300px;
+   border: 1px solid #ddd;
+   border-radius: 10px;
+   padding: 15px;
+   background-color: #fff;
+}
+
+/* Gaya untuk gambar sampul buku */
+.book-cover {
+   width: 100%;
+   height: auto;
+   border-radius: 5px;
+}
+
+/* Gaya untuk judul buku di library item */
+.book-item h2 {
+   font-size: 20px;
+   margin-top: 10px;
+   margin-bottom: 5px;
+}
+
+/* Gaya untuk tombol baca di library item */
+.read-button {
+   display: inline-block;
+   margin-top: 10px;
+   padding: 10px 20px;
+   background-color: #4CAF50;
+   color: white;
+   text-decoration: none;
+   border-radius: 5px;
+}
+
+.read-button:hover {
+   background-color: #45a049; /* Warna hijau lebih gelap saat hover */
+}

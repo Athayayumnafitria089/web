@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library - Athaya's Library</title>
+    <title>Library - Laskar Pelangi</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -21,18 +21,14 @@
     <h1>Library Collection</h1>
 </header>
 
-<!-- Tombol On/Off Suara -->
-<button id="toggle-sound" style="font-size: 24px; background: none; border: none; cursor: pointer;">
-    🔊
-</button>
-
 <section id="book-list">
-    <ul class="books">
-        <!-- Buku dengan suara saat disentuh -->
-        <li onmouseover='speak("Buku 1: Pemrograman Web Dasar")'>Buku 1: Pemrograman Web Dasar</li>
-        <li onmouseover='speak("Buku 2: Panduan CSS Animasi Modern")'>Buku 2: Panduan CSS Animasi Modern</li>
-        <li onmouseover='speak("Buku 3: JavaScript untuk Pemula")'>Buku 3: JavaScript untuk Pemula</li>
-    </ul>
+    <!-- Buku Laskar Pelangi -->
+    <div class="book-item">
+        <img src="images/Laskar-Pelangi.jpg" alt="Sampul Buku Laskar Pelangi" class="book-cover">
+        <h2>Laskar Pelangi</h2>
+        <p>Karya Andrea Hirata</p>
+        <a href="books/Laskar-Pelangi.pdf" target="_blank" class="read-button">Baca Buku</a>
+    </div>
 </section>
 
 <script src="./script.js"></script>
