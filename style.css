@@ -8,6 +8,18 @@ body {
    min-height: 100vh; /* Ensures the body takes at least the full height of the viewport */
 }
 
+/* GIF Container */
+.gif-container {
+   position: absolute; /* Memposisikan elemen secara absolut */
+   top: 10px; /* Jarak dari atas */
+   left: 10px; /* Jarak dari kiri */
+}
+
+.gif-container img {
+   width: 100px; /* Atur lebar animasi agar tidak terlalu besar */
+   height: auto; /* Menjaga rasio aspek gambar agar tidak terdistorsi */
+}
+
 /* Logo Container */
 .logo-container {
    position: absolute; /* Memposisikan elemen secara absolut */
@@ -68,46 +80,29 @@ header h1 {
    font-size: 2.5em;
 }
 
-/* Visitor Form and Suggestion Box Styling */
-.container {
-   margin-top: 30px; /* Memberi jarak antara header dan form */
+/* Centering Content for About Details Section (Jika digunakan di halaman lain)*/
+section#about-details {
+   display: flex;
+   justify-content: center; /* Center horizontally */
+   align-items: center; /* Center vertically */
+   margin-top: 20px; /* Add spacing above section content */
 }
 
-form h2 {
-   margin-bottom: 20px; /* Memberi jarak antara judul dan form */
+table {
+   border-collapse: collapse; /* Merge table borders for cleaner look */
+   width: 50%; /* Set table width to half of the container width */
 }
 
-/* Gaya untuk tombol di form Visitor dan Suggestion Box */
-button.btn-primary {
-   background-color: #4CAF50; /* Hijau sesuai tema */
-   border-color: #4CAF50; /* Warna border tombol hijau */
+th, td {
+   border: 1px solid #ddd; /* Add cell borders for clarity */
+   padding: 10px; /* Add padding for better spacing between content and borders */
 }
 
-button.btn-primary:hover {
-   background-color: #45a049; /* Hijau lebih gelap saat hover */
+th {
+   background-color: #f2f2f2; /* Light gray background for table headers to differentiate them from rows */
 }
 
-button.btn-success {
-   background-color: #ff7e5f; /* Warna tombol sesuai gradien tema */
-}
-
-button.btn-success:hover {
-   background-color: #feb47b; /* Warna tombol lebih terang saat hover */
-}
-
-/* GIF Container (jika ada)*/
-.gif-container {
-   position: absolute; /* Memposisikan elemen secara absolut */
-   top: 10px; /* Jarak dari atas */
-   left: 10px; /* Jarak dari kiri */
-}
-
-.gif-container img {
-   width: 100px; /* Atur lebar animasi agar tidak terlalu besar */
-   height: auto; /* Menjaga rasio aspek gambar agar tidak terdistorsi */
-}
-
-/* Gaya untuk item buku di library (jika ada)*/
+/* Gaya untuk item buku di library (Jika digunakan di halaman lain)*/
 .book-item {
   text-align: center;
   margin: 20px auto;
@@ -118,22 +113,49 @@ button.btn-success:hover {
   background-color: #fff;
 }
 
-/* Gaya untuk gambar sampul buku (jika ada)*/
+/* Gaya untuk gambar sampul buku (Jika digunakan di halaman lain)*/
 .book-cover {
   width: 100%;
   height: auto;
 }
 
-/* Gaya untuk judul buku di library item (jika ada)*/
+/* Gaya untuk judul buku di library item (Jika digunakan di halaman lain)*/
 .book-item h2 {
   font-size: 20px;
 }
 
-/* Gaya untuk tombol baca di library item (jika ada)*/
+/* Gaya untuk tombol baca di library item (Jika digunakan di halaman lain)*/
 .read-button {
   display:inline-block;
   margin-top:.5em;
   padding:.5em .75em;
   background-color:#4CAF50;
   color:white;
+}
+
+/* Visitor Form and Suggestion Box Styling - Tambahan Baru untuk Bootstrap Grid*/
+.container {
+  margin-top: 30px; /* Memberi jarak antara header dan form */
+
+}
+
+form h2 {
+  margin-bottom: 20px; /* Memberi jarak antara judul dan form */
+}
+
+button.btn-primary {
+  background-color: #4CAF50; /* Hijau sesuai tema */
+  border-color: #4CAF50; /* Warna border tombol hijau */
+}
+
+button.btn-primary:hover {
+  background-color: #45a049; /* Hijau lebih gelap saat hover */
+}
+
+button.btn-success {
+  background-color: #ff7e5f; /* Warna tombol sesuai gradien tema */
+}
+
+button.btn-success:hover {
+  background-color: #feb47b; /* Warna tombol lebih terang saat hover */
 }
