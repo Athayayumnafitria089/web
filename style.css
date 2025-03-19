@@ -6,132 +6,392 @@ body {
     text-align: center; /* Center all text content */
     background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient background */
     min-height: 100vh; /* Ensures the body takes at least the full height of the viewport */
-}
-
-/* GIF Container */
-.gif-container {
+ }
+ 
+ /* GIF Container */
+ .gif-container {
     position: absolute; /* Memposisikan elemen secara absolut */
     top: 10px; /* Jarak dari atas */
     left: 10px; /* Jarak dari kiri */
-}
-
-.gif-container img {
+ }
+ 
+ .gif-container img {
     width: 100px; /* Atur lebar animasi agar tidak terlalu besar */
     height: auto; /* Menjaga rasio aspek gambar agar tidak terdistorsi */
-}
-
-/* Logo Container */
-.logo-container {
+ }
+ 
+ /* Logo Container */
+ .logo-container {
     position: absolute; /* Memposisikan elemen secara absolut */
     top: 10px; /* Jarak dari atas */
     left: 120px; /* Jarak dari kiri untuk menghindari tumpang tindih dengan GIF */
-}
-
-.logo {
+ }
+ 
+ .logo {
     width: 150px; /* Atur lebar logo sesuai kebutuhan */
-}
-
-/* Navigation Bar */
-nav {
+ }
+ 
+ /* Navigation Bar */
+ nav {
     position: absolute; /* Position element absolutely */
     top: 10px; /* Distance from the top */
     right: 10px; /* Distance from the right edge */
     background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background for better visibility */
     padding: 10px; /* Add some padding around the nav */
     border-radius: 5px; /* Optional: Rounded corners */
-}
-
-nav ul {
+ }
+ 
+ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-}
-
-nav ul li {
+ }
+ 
+ nav ul li {
     display: inline;
     margin-right: 15px;
-}
-
-nav ul li a {
+ }
+ 
+ nav ul li a {
     text-decoration: none;
     color: white; /* Keep original text color */
     font-weight: bold;
-}
-
-/* Tombol On/Off Suara (Ikon 🔊/🔇) */
-#toggle-sound {
+ }
+ 
+ /* Tombol On/Off Suara (Ikon 🔊/🔇) */
+ #toggle-sound {
     font-size: 24px; /* Ukuran ikon suara */
     background-color: transparent; /* Tanpa latar belakang */
     border: none; /* Tanpa border */
     cursor: pointer; /* Menampilkan kursor pointer saat hover */
-}
-
-/* Efek hover pada tombol suara (ikon) */
-#toggle-sound:hover {
+ }
+ 
+ /* Efek hover pada tombol suara (ikon) */
+ #toggle-sound:hover {
     color: #4CAF50; /* Ubah warna ikon saat hover menjadi hijau */
-}
-
-/* Header Styles */
-header {
+ }
+ 
+ /* Header Styles */
+ header {
     margin-top: 20px;
-}
-
-header h1 {
+ }
+ 
+ header h1 {
     font-size: 2.5em;
-}
-
-/* Centering Content for About Details Section */
-section#about-details {
+ }
+ 
+ /* Centering Content for About Details Section */
+ section#about-details {
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     margin-top: 20px; /* Add spacing above section content */
-}
-
-table {
+ }
+ 
+ table {
     border-collapse: collapse; /* Merge table borders for cleaner look */
     width: 50%; /* Set table width to half of the container width */
-}
-
-th, td {
+ }
+ 
+ th, td {
     border: 1px solid #ddd; /* Add cell borders for clarity */
     padding: 10px; /* Add padding for better spacing between content and borders */
-    text-align: left; /* Align text to the left for readability in tables */
-}
-
-th {
+ }
+ 
+ th {
     background-color: #f2f2f2; /* Light gray background for table headers to differentiate them from rows */
-}
-
-/* Gaya untuk item buku di library */
-.book-item {
-   text-align: center;
-   margin: 20px auto;
-   max-width: 300px;
-   border: 1px solid #ddd;
-   border-radius: 10px;
-   padding: 15px;
-   background-color: #fff;
-}
-
-/* Gaya untuk gambar sampul buku */
-.book-cover {
-   width: 100%;
-   height: auto;
-   border-radius: 5px;
-}
-
-/* Gaya untuk judul buku di library item */
-.book-item h2 {
-   font-size: 20px;
-   margin-top: 10px;
-   margin-bottom: 5px;
-}
-
-/* Gaya untuk tombol baca di library item */
-.read-button {
-   display: inline-block;
-   margin-top: 10px;
-   padding: 10px 20px;
-   background-color: #4CAF50;
-   color:white;}
+ }
+ 
+ /* Gaya untuk item buku di library */
+ .book-item {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #fff;
+ }
+ 
+ /* Gaya untuk gambar sampul buku */
+ .book-cover {
+    width: 100%;
+    height: auto;
+ }
+ 
+ /* Gaya untuk judul buku di library item */
+ .book-item h2 {
+    font-size: 20px;
+ }
+ 
+ /* Gaya untuk tombol baca di library item */
+ .read-button {
+  display:inline-block;
+  margin-top:.5em;
+  padding:.5em .75em;
+  background-color:#4CAF50;
+  color:white;}/* Global Styles */
+  body {
+     margin: 0;
+     padding: 0;
+     font-family: Arial, sans-serif;
+     text-align: center; /* Center all text content */
+     background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient background */
+     min-height: 100vh; /* Ensures the body takes at least the full height of the viewport */
+  }
+  
+  /* GIF Container */
+  .gif-container {
+     position: absolute; /* Memposisikan elemen secara absolut */
+     top: 10px; /* Jarak dari atas */
+     left: 10px; /* Jarak dari kiri */
+  }
+  
+  .gif-container img {
+     width: 100px; /* Atur lebar animasi agar tidak terlalu besar */
+     height: auto; /* Menjaga rasio aspek gambar agar tidak terdistorsi */
+  }
+  
+  /* Logo Container */
+  .logo-container {
+     position: absolute; /* Memposisikan elemen secara absolut */
+     top: 10px; /* Jarak dari atas */
+     left: 120px; /* Jarak dari kiri untuk menghindari tumpang tindih dengan GIF */
+  }
+  
+  .logo {
+     width: 150px; /* Atur lebar logo sesuai kebutuhan */
+  }
+  
+  /* Navigation Bar */
+  nav {
+     position: absolute; /* Position element absolutely */
+     top: 10px; /* Distance from the top */
+     right: 10px; /* Distance from the right edge */
+     background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background for better visibility */
+     padding: 10px; /* Add some padding around the nav */
+     border-radius: 5px; /* Optional: Rounded corners */
+  }
+  
+  nav ul {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+  }
+  
+  nav ul li {
+     display: inline;
+     margin-right: 15px;
+  }
+  
+  nav ul li a {
+     text-decoration: none;
+     color: white; /* Keep original text color */
+     font-weight: bold;
+  }
+  
+  /* Tombol On/Off Suara (Ikon 🔊/🔇) */
+  #toggle-sound {
+     font-size: 24px; /* Ukuran ikon suara */
+     background-color: transparent; /* Tanpa latar belakang */
+     border: none; /* Tanpa border */
+     cursor: pointer; /* Menampilkan kursor pointer saat hover */
+  }
+  
+  /* Efek hover pada tombol suara (ikon) */
+  #toggle-sound:hover {
+     color: #4CAF50; /* Ubah warna ikon saat hover menjadi hijau */
+  }
+  
+  /* Header Styles */
+  header {
+     margin-top: 20px;
+  }
+  
+  header h1 {
+     font-size: 2.5em;
+  }
+  
+  /* Centering Content for About Details Section */
+  section#about-details {
+     display: flex;
+     justify-content: center; /* Center horizontally */
+     align-items: center; /* Center vertically */
+     margin-top: 20px; /* Add spacing above section content */
+  }
+  
+  table {
+     border-collapse: collapse; /* Merge table borders for cleaner look */
+     width: 50%; /* Set table width to half of the container width */
+  }
+  
+  th, td {
+     border: 1px solid #ddd; /* Add cell borders for clarity */
+     padding: 10px; /* Add padding for better spacing between content and borders */
+  }
+  
+  th {
+     background-color: #f2f2f2; /* Light gray background for table headers to differentiate them from rows */
+  }
+  
+  /* Gaya untuk item buku di library */
+  .book-item {
+     text-align: center;
+     margin: 20px auto;
+     max-width: 300px;
+     border: 1px solid #ddd;
+     border-radius: 10px;
+     padding: 15px;
+     background-color: #fff;
+  }
+  
+  /* Gaya untuk gambar sampul buku */
+  .book-cover {
+     width: 100%;
+     height: auto;
+  }
+  
+  /* Gaya untuk judul buku di library item */
+  .book-item h2 {
+     font-size: 20px;
+  }
+  
+  /* Gaya untuk tombol baca di library item */
+  .read-button {
+   display:inline-block;
+   margin-top:.5em;
+   padding:.5em .75em;
+   background-color:#4CAF50;
+   color:white;}/* Global Styles */
+   body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      text-align: center; /* Center all text content */
+      background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient background */
+      min-height: 100vh; /* Ensures the body takes at least the full height of the viewport */
+   }
+   
+   /* GIF Container */
+   .gif-container {
+      position: absolute; /* Memposisikan elemen secara absolut */
+      top: 10px; /* Jarak dari atas */
+      left: 10px; /* Jarak dari kiri */
+   }
+   
+   .gif-container img {
+      width: 100px; /* Atur lebar animasi agar tidak terlalu besar */
+      height: auto; /* Menjaga rasio aspek gambar agar tidak terdistorsi */
+   }
+   
+   /* Logo Container */
+   .logo-container {
+      position: absolute; /* Memposisikan elemen secara absolut */
+      top: 10px; /* Jarak dari atas */
+      left: 120px; /* Jarak dari kiri untuk menghindari tumpang tindih dengan GIF */
+   }
+   
+   .logo {
+      width: 150px; /* Atur lebar logo sesuai kebutuhan */
+   }
+   
+   /* Navigation Bar */
+   nav {
+      position: absolute; /* Position element absolutely */
+      top: 10px; /* Distance from the top */
+      right: 10px; /* Distance from the right edge */
+      background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background for better visibility */
+      padding: 10px; /* Add some padding around the nav */
+      border-radius: 5px; /* Optional: Rounded corners */
+   }
+   
+   nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+   }
+   
+   nav ul li {
+      display: inline;
+      margin-right: 15px;
+   }
+   
+   nav ul li a {
+      text-decoration: none;
+      color: white; /* Keep original text color */
+      font-weight: bold;
+   }
+   
+   /* Tombol On/Off Suara (Ikon 🔊/🔇) */
+   #toggle-sound {
+      font-size: 24px; /* Ukuran ikon suara */
+      background-color: transparent; /* Tanpa latar belakang */
+      border: none; /* Tanpa border */
+      cursor: pointer; /* Menampilkan kursor pointer saat hover */
+   }
+   
+   /* Efek hover pada tombol suara (ikon) */
+   #toggle-sound:hover {
+      color: #4CAF50; /* Ubah warna ikon saat hover menjadi hijau */
+   }
+   
+   /* Header Styles */
+   header {
+      margin-top: 20px;
+   }
+   
+   header h1 {
+      font-size: 2.5em;
+   }
+   
+   /* Centering Content for About Details Section */
+   section#about-details {
+      display: flex;
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+      margin-top: 20px; /* Add spacing above section content */
+   }
+   
+   table {
+      border-collapse: collapse; /* Merge table borders for cleaner look */
+      width: 50%; /* Set table width to half of the container width */
+   }
+   
+   th, td {
+      border: 1px solid #ddd; /* Add cell borders for clarity */
+      padding: 10px; /* Add padding for better spacing between content and borders */
+   }
+   
+   th {
+      background-color: #f2f2f2; /* Light gray background for table headers to differentiate them from rows */
+   }
+   
+   /* Gaya untuk item buku di library */
+   .book-item {
+      text-align: center;
+      margin: 20px auto;
+      max-width: 300px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      background-color: #fff;
+   }
+   
+   /* Gaya untuk gambar sampul buku */
+   .book-cover {
+      width: 100%;
+      height: auto;
+   }
+   
+   /* Gaya untuk judul buku di library item */
+   .book-item h2 {
+      font-size: 20px;
+   }
+   
+   /* Gaya untuk tombol baca di library item */
+   .read-button {
+    display:inline-block;
+    margin-top:.5em;
+    padding:.5em .75em;
+    background-color:#4CAF50;
+    color:white;}

@@ -34,16 +34,25 @@
     </header>
 
     <!-- Kerjasama -->
-    <p>Kerjasama Perpustakaan <a href="https://library.usu.ac.id" target="_blank">Perpustakaan Universitas Sumatera Utara</a></p>
+    <p>Kerjasama Perpustakaan 
+      <a href="https://library.usu.ac.id" target="_blank">Perpustakaan Universitas Sumatera Utara</a></p>
 
     <!-- Visitor Form -->
     <section id="visitor-form">
         <h2>Visitor Form</h2>
-        <form action="tayataya0312@gmail.com" method="post" enctype="text/plain">
+        <form action="https://formspree.io/f/mjkykndy" method="POST">
             <label for="name">Nama:</label>
             <input type="text" id="name" name="name" required>
+
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
+
+            <label for="number">No Telepon:</label>
+            <input type="tel" id="number" name="number" placeholder="+62..." required>
+
+            <label for="address">Alamat:</label>
+            <textarea id="address" name="address" rows="4"></textarea>
+
             <button type="submit">Kirim</button>
         </form>
     </section>
@@ -51,8 +60,14 @@
     <!-- Suggestion Box -->
     <section id="suggestion-box">
         <h2>Suggestion Box</h2>
-        <form action="tayataya0312@gmail.com" method="post" enctype="text/plain">
-            <textarea name="suggestion" rows="5" placeholder="Please Put Your Suggestion, Here..." required></textarea>
+        <form action="https://formspree.io/f/xgvavgqq" method="POST">
+            <label for="">Your email:</label>
+            <input type="email" name="email">
+
+            <label for="">Your message:</label>
+            <textarea name="message"></textarea>
+
+            <!-- your other form fields go here -->
             <button type="submit">Kirim Saran</button>
         </form>
     </section>
