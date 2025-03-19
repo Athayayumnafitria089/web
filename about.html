@@ -8,40 +8,47 @@
 </head>
 
 <body>
+
     <!-- Menyisipkan GIF -->
     <div class="gif-container">
-        <img src="images/Welcome.gif" alt="Selamat Datang" width="200" height="200" />
+        <img src="images/Welcome.gif" alt="Selamat Datang" width="200" height "200"/>
     </div>
 
     <!-- Header -->
-    <header>
+    <header class='text-center'>
         <h1>About Me</h1>
+        <!-- Tombol On/Off Suara (dipindahkan di bawah navbar) -->
+        <button id='toggle-sound' style='font-size: 24px; background: none; border: none; cursor: pointer;'>
+            🔊
+        </button> 
     </header>
 
+    <!-- Navbar -->
     <nav>
-        <ul>
-            <li><a href="index.html">Homepage</a></li>
-            <li><a href="#">About Me</a></li>
-            <li><a href="library.html">Library</a></li>
-        </ul>
+        <ul >
+            <li><a href='index.html'>Homepage</a></li>
+            <li><a href='#'>About Me</a></li>
+            <li><a href='library.html'>Library</a></li>
+        </ul> 
     </nav>
 
-    <!-- Tombol On/Off Suara -->
-    <button id="toggle-sound" style="font-size: 24px; background: none; border: none; cursor: pointer;">
-        🔊
-    </button>
+    
+    
 
-    <section id="about-details">
-        <table>
-            <tr><th>Nama</th><td>Athaya Yumna Fitria</td></tr>
-            <tr><th>NIM</th><td>220709089</td></tr>
-            <tr><th>Email</th><td>tayataya0312@gmail.com</td></tr>
-            <tr><th>No Telepon/WhatsApp</th><td>+62 81375807599</td></tr>
-        </table>
-    </section>
+     <!-- About Me Section -->
+     <section id='about-details' style='text-align:center;'>
+         <!-- Tabel untuk informasi pribadi -->
+         <table style='margin:auto;'>
+             <tr><th>Nama</th><td>Athaya Yumna Fitria</td></tr>
+             <tr><th>NIM</th><td>220709089</td></tr>
+             <tr><th>Email</th><td>tayataya0312@gmail.com</td></tr>
+             <tr><th>No Telepon/WhatsApp</th><td>+62 81375807599</td></tr>
+         </table> 
+     </section>
 
-    <!-- JavaScript -->
-    <script src="./script.js"></script>
+     <!-- JavaScript -->
+     <script src='./script.js'></script>
 
 </body>
+
 </html>
