@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <title>Welcome To Athaya's Library</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
 
     <!-- Menyisipkan Logo USU -->
     <div class="logo-container">
-        <img src="images/usu.png" alt="Logo USU" class="logo">
+        <img src="images/usu.png" alt="Logo USU" class="logo" />
     </div>
 
     <!-- Navbar -->
@@ -20,6 +20,7 @@
             <li class="dropdown"><a href="#" class="nav-button">Homepage</a></li>
             <li class="dropdown"><a href="about.html" class="nav-button">About Me</a></li>
             <li class="dropdown"><a href="library.html" class="nav-button">Library</a></li>
+            <li class="dropdown"><a href="event.html" class="nav-button">Event</a></li>
         </ul>
     </nav>
 
@@ -38,6 +39,13 @@
           <a href="https://library.usu.ac.id" target="_blank">Perpustakaan Universitas Sumatera Utara</a></p>
     </header>
 
+    <!-- Banner Event Kecil -->
+    <div class="event-banner text-center my-4">
+      <a href="event.html" class="event-link">
+        <strong>📢 Olimpiade Sastra 2025 - Klik untuk info lengkap & countdown!</strong>
+      </a>
+    </div>
+
     <!-- Visitor Form and Suggestion Box -->
     <div class="container mt-5">
         <div class="row">
@@ -47,15 +55,15 @@
                 <form action="https://formspree.io/f/mjkykndy" method="POST">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name:</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
+                        <input type="text" id="name" name="name" class="form-control" required />
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email:</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
+                        <input type="email" id="email" name="email" class="form-control" required />
                     </div>
                     <div class="mb-3">
                         <label for="number" class="form-label">Contact Number:</label>
-                        <input type="tel" id="number" name="number" placeholder="+62..." class="form-control" required>
+                        <input type="tel" id="number" name="number" placeholder="+62..." class="form-control" required />
                     </div>
                     <div class="mb-3">
                         <label for="address" class="form-label">Address:</label>
@@ -71,13 +79,12 @@
                 <form action="https://formspree.io/f/xgvavgqq" method="POST">
                     <div class="mb-3">
                         <label for="" class="form-label">Your Email:</label>
-                        <input type="email" name="email" class="form-control">
+                        <input type="email" name="email" class="form-control" />
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Your Message:</label>
                         <textarea name="message" rows="4" class="form-control"></textarea>
                     </div>
-                    <!-- your other form fields go here -->
                     <button type="submit" class="btn btn-success">Click Here</button>
                 </form>
             </div>
