@@ -8,9 +8,9 @@
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #ff7e5f, #feb47b);
-      text-align: center;
       margin: 0;
       padding: 20px;
+      color: #333;
     }
     nav ul {
       list-style: none;
@@ -28,15 +28,32 @@
     nav ul li a.active {
       color: #e1306c;
     }
-    #event-poster {
-      max-width: 400px;
+    h1, p {
+      text-align: center;
+      margin: 0 0 15px 0;
+    }
+    /* Container untuk poster dan countdown */
+    .event-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      max-width: 720px;
       margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    /* Poster */
+    #event-poster {
+      max-width: 300px;
       border: 4px solid #e1306c;
       border-radius: 15px;
-      background: #fff;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
       cursor: pointer;
       transition: transform 0.3s ease;
+      flex-shrink: 0;
     }
     #event-poster:hover {
       transform: scale(1.05);
@@ -46,22 +63,36 @@
       border-radius: 10px;
       display: block;
     }
+    /* Countdown */
     #countdown {
-      margin-top: 20px;
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 600;
       color: #e1306c;
       background: #fce4ec;
-      padding: 15px 30px;
+      padding: 20px 30px;
       border-radius: 12px;
       box-shadow: inset 0 0 10px #f8bbd0;
-      display: inline-block;
       user-select: none;
+      min-width: 220px;
+      text-align: center;
     }
     #countdown span {
       font-weight: 700;
       color: #ad1457;
       margin: 0 5px;
+      display: inline-block;
+      min-width: 40px;
+    }
+    /* Responsive untuk layar kecil */
+    @media (max-width: 600px) {
+      .event-container {
+        flex-direction: column;
+      }
+      #countdown {
+        min-width: auto;
+        width: 100%;
+        margin-top: 20px;
+      }
     }
   </style>
 </head>
@@ -79,23 +110,24 @@
   <h1>Olimpiade Sastra 2025</h1>
   <p>Jangan lewatkan kesempatan untuk ikut serta dalam Olimpiade Sastra tahun ini!</p>
 
-  <a href="https://www.instagram.com/olimpiadesastra?igsh=ZjV4MHRkZ3N5b2Zu" target="_blank" rel="noopener noreferrer" id="event-poster" title="Kunjungi Instagram Olimpiade Sastra">
-    <img src="images/event.jpeg" alt="Poster Event Olimpiade Sastra" />
-  </a>
+  <div class="event-container">
+    <a href="https://www.instagram.com/olimpiadesastra?igsh=ZjV4MHRkZ3N5b2Zu" target="_blank" rel="noopener noreferrer" id="event-poster" title="Kunjungi Instagram Olimpiade Sastra">
+      <img src="images/event.jpeg" alt="Poster Event Olimpiade Sastra" />
+    </a>
 
-  <div id="countdown" aria-live="polite" aria-atomic="true">
-    <span class="days">00</span> hari 
-    <span class="hours">00</span> jam 
-    <span class="minutes">00</span> menit 
-    <span class="seconds">00</span> detik
+    <div id="countdown" aria-live="polite" aria-atomic="true">
+      <span class="days">00</span> hari 
+      <span class="hours">00</span> jam 
+      <span class="minutes">00</span> menit 
+      <span class="seconds">00</span> detik
+    </div>
   </div>
 
   <script>
     const countdownDate = new Date("2025-04-20T23:59:59").getTime();
-
     const countdownElement = document.getElementById("countdown");
 
-    const updateCountdown = () => {
+    function updateCountdown() {
       const now = new Date().getTime();
       const distance = countdownDate - now;
 
@@ -116,7 +148,7 @@
         <span class="minutes">${minutes.toString().padStart(2, "0")}</span> menit 
         <span class="seconds">${seconds.toString().padStart(2, "0")}</span> detik
       `;
-    };
+    }
 
     updateCountdown();
     const intervalId = setInterval(updateCountdown, 1000);
