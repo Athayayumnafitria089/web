@@ -18,7 +18,7 @@ document.querySelectorAll("nav ul li a").forEach(link => {
        link.style.color = "red"; // Ubah warna teks saat hover
    });
    link.addEventListener("mouseout", () => {
-       link.style.color = "black"; // Kembalikan warna teks saat mouse keluar
+       link.style.color = ""; // Reset ke warna default CSS (biasanya putih)
    });
 });
 
@@ -27,3 +27,11 @@ function speak(text) {
    const utterance = new SpeechSynthesisUtterance(text);
    window.speechSynthesis.speak(utterance);
 }
+
+// Inisialisasi tooltip Bootstrap 5 (jika menggunakan Bootstrap tooltip)
+document.addEventListener('DOMContentLoaded', function () {
+   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[title]'));
+   tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+      new bootstrap.Tooltip(tooltipTriggerEl);
+   });
+});

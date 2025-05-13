@@ -319,3 +319,45 @@ nav ul li a.active {
     padding: 10px;
   }
 }
+
+/* ===================== */
+/* TOOLTIP STYLES (Bootstrap 5 Customizations) */
+/* ===================== */
+
+/* Override default tooltip background and text color */
+.tooltip.bs-tooltip-top .tooltip-inner,
+.tooltip.bs-tooltip-bottom .tooltip-inner,
+.tooltip.bs-tooltip-start .tooltip-inner,
+.tooltip.bs-tooltip-end .tooltip-inner {
+  background-color: #e1306c; /* Instagram pink */
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(225, 48, 108, 0.5);
+}
+
+/* Tooltip arrow color for all directions */
+.tooltip.bs-tooltip-top .tooltip-arrow::before {
+  border-color: #e1306c transparent transparent transparent;
+}
+.tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+  border-color: transparent transparent #e1306c transparent;
+}
+.tooltip.bs-tooltip-start .tooltip-arrow::before {
+  border-color: transparent transparent transparent #e1306c;
+}
+.tooltip.bs-tooltip-end .tooltip-arrow::before {
+  border-color: transparent #e1306c transparent transparent;
+}
+
+/* Optional: Add smooth fade-in animation */
+.tooltip.fade.show {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Optional: Change cursor to help on tooltip trigger */
+[title] {
+  cursor: help;
+}

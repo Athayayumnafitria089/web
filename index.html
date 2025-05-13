@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -17,10 +18,10 @@
     <!-- Navbar -->
     <nav>
         <ul class="navbar">
-            <li class="dropdown"><a href="#" class="nav-button">Homepage</a></li>
-            <li class="dropdown"><a href="about.html" class="nav-button">About Me</a></li>
-            <li class="dropdown"><a href="library.html" class="nav-button">Library</a></li>
-            <li class="dropdown"><a href="event.html" class="nav-button">Event</a></li>
+            <li class="dropdown"><a href="#" class="nav-button" title="Kembali ke halaman utama atau beranda website">Homepage</a></li>
+            <li class="dropdown"><a href="about.html" class="nav-button" title="Informasi lengkap tentang pemilik website">About Me</a></li>
+            <li class="dropdown"><a href="library.html" class="nav-button" title="Jelajahi koleksi perpustakaan digital kami">Library</a></li>
+            <li class="dropdown"><a href="event.html" class="nav-button" title="Lihat jadwal dan informasi acara mendatang">Event</a></li>
         </ul>
     </nav>
 
@@ -41,7 +42,7 @@
 
     <!-- Banner Event Kecil -->
     <div class="event-banner text-center my-4">
-      <a href="event.html" class="event-link">
+      <a href="event.html" class="event-link" title="Info lengkap Olimpiade Sastra 2025 dan hitung mundur acara">
         <strong>📢 Olimpiade Sastra 2025 - Klik untuk info lengkap & countdown!</strong>
       </a>
     </div>
@@ -91,7 +92,9 @@
         </div>
     </div>
 
-    <!-- JavaScript -->
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
     <script src="./script.js"></script>
 
 </body>
