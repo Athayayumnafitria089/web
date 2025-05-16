@@ -1,11 +1,45 @@
+// Fungsi untuk set cookie
+function setCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (days*24*60*60*1000));
+    const expires = "expires="+ d.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+// Fungsi untuk get cookie
+function getCookie(name) {
+    const cname = name + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i].trim();
+        if (c.indexOf(cname) === 0) {
+            return c.substring(cname.length, c.length);
+        }
+    }
+    return "";
+}
+
 let soundEnabled = false; // Default: Suara dimatikan
 
 // Tombol untuk mengaktifkan/mematikan suara
 const toggleSoundButton = document.getElementById('toggle-sound');
+
+// Membaca cookie saat halaman dimuat untuk status suara
+const savedSoundStatus = getCookie("soundEnabled");
+if (savedSoundStatus === "true") {
+    soundEnabled = true;
+    if (toggleSoundButton) toggleSoundButton.textContent = '🔇';
+} else {
+    soundEnabled = false;
+    if (toggleSoundButton) toggleSoundButton.textContent = '🔊';
+}
+
 if (toggleSoundButton) {
    toggleSoundButton.addEventListener('click', () => {
       soundEnabled = !soundEnabled; // Toggle status suara
       toggleSoundButton.textContent = soundEnabled ? '🔇' : '🔊'; // Ubah ikon tombol
+      setCookie("soundEnabled", soundEnabled, 7); // Simpan status ke cookie selama 7 hari
    });
 }
 
@@ -34,4 +68,44 @@ document.addEventListener('DOMContentLoaded', function () {
    tooltipTriggerList.forEach(function (tooltipTriggerEl) {
       new bootstrap.Tooltip(tooltipTriggerEl);
    });
+});
+
+// ===================
+// Cookie Consent Banner
+// ===================
+
+// Fungsi menampilkan banner jika belum setuju cookie
+function checkCookieConsent() {
+    if (getCookie("cookieConsent") !== "accepted") {
+        const banner = document.getElementById("cookie-consent-banner");
+        if (banner) banner.style.display = "block";
+    }
+}
+
+// Fungsi menyimpan persetujuan cookie
+function acceptCookieConsent() {
+    setCookie("cookieConsent", "accepted", 365);
+    const banner = document.getElementById("cookie-consent-banner");
+    if (banner) banner.style.display = "none";
+}
+
+// Fungsi tombol Kelola cookie
+function manageCookieConsent() {
+    // Contoh: arahkan ke halaman pengaturan cookie
+    window.location.href = "cookie-settings.html";
+}
+
+// Event listener saat DOM siap
+document.addEventListener('DOMContentLoaded', () => {
+    checkCookieConsent();
+
+    const acceptBtn = document.getElementById("accept-cookie");
+    if (acceptBtn) {
+        acceptBtn.addEventListener("click", acceptCookieConsent);
+    }
+
+    const manageBtn = document.getElementById("manage-cookie");
+    if (manageBtn) {
+        manageBtn.addEventListener("click", manageCookieConsent);
+    }
 });
