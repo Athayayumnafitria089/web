@@ -403,3 +403,27 @@ nav ul li a.active {
 #cookie-consent-banner #manage-cookie:hover {
   background: #444;
 }
+
+/* Styling untuk Login & Daftar */
+.hidden {
+  display: none !important;
+}
+
+#auth-container input.form-control {
+  padding: 10px;
+  font-size: 1rem;
+}
+
+#auth-container button.btn {
+  font-weight: 600;
+}
+
+/* Styling Forum Diskusi */
+#forum-messages div {
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  word-wrap: break-word;
+}
