@@ -1,156 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <title>Welcome To Athaya's Library</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <style>
-      /* Tambahan CSS untuk Login & Forum */
-      .hidden { display: none !important; }
-      #auth-container { max-width: 600px; margin: 20px auto; }
-      #forum-messages div { 
-        background: #fff; 
-        padding: 10px; 
-        border-radius: 8px; 
-        margin-bottom: 10px; 
-        border: 1px solid #ddd;
-      }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login & Daftar - Athaya's Library</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+    #auth-container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      width: 350px;
+    }
+    h2 {
+      text-align: center;
+      color: #007BFF;
+      margin-bottom: 20px;
+    }
+    .hidden {
+      display: none !important;
+    }
+    input.form-control {
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      transition: border-color 0.3s ease;
+    }
+    input.form-control:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+    button.btn-primary {
+      width: 100%;
+      background-color: #007BFF;
+      border: none;
+      padding: 10px;
+      font-weight: 700;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+    button.btn-primary:hover {
+      background-color: #0056b3;
+    }
+    p.toggle-text {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+    p.toggle-text a {
+      color: #007BFF;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    p.toggle-text a:hover {
+      color: #0056b3;
+    }
+    .text-danger {
+      text-align: center;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Menyisipkan Logo USU -->
-    <div class="logo-container">
-        <img src="images/usu.png" alt="Logo USU" class="logo" />
+  <div id="auth-container">
+    <!-- Register Section -->
+    <div id="register-section" class="hidden">
+      <h2>Daftar</h2>
+      <div id="auth-message" class="text-danger"></div>
+      <input type="text" id="reg-username" class="form-control" placeholder="Username" required />
+      <input type="password" id="reg-password" class="form-control" placeholder="Password" required />
+      <input type="password" id="reg-password-confirm" class="form-control" placeholder="Konfirmasi Password" required />
+      <button class="btn btn-primary" onclick="register()">Daftar</button>
+      <p class="toggle-text">Sudah punya akun? <a onclick="toggleForms()">Login di sini</a></p>
     </div>
 
-    <!-- Navbar -->
-    <nav>
-        <ul class="navbar">
-            <li class="dropdown"><a href="#" class="nav-button" title="Kembali ke halaman utama atau beranda website">Homepage</a></li>
-            <li class="dropdown"><a href="about.html" class="nav-button" title="Informasi lengkap tentang pemilik website">About Me</a></li>
-            <li class="dropdown"><a href="library.html" class="nav-button" title="Jelajahi koleksi perpustakaan digital kami">Library</a></li>
-            <li class="dropdown"><a href="event.html" class="nav-button" title="Lihat jadwal dan informasi acara mendatang">Event</a></li>
-        </ul>
-    </nav>
-
-    <!-- Tombol On/Off Suara -->
-    <div class="text-center mb-4">
-        <button id="toggle-sound" style="font-size: 24px; background: none; border: none; cursor: pointer;">
-            🔊
-        </button>
+    <!-- Login Section -->
+    <div id="login-section">
+      <h2>Login</h2>
+      <div id="auth-message-login" class="text-danger"></div>
+      <input type="text" id="login-username" class="form-control" placeholder="Username" required />
+      <input type="password" id="login-password" class="form-control" placeholder="Password" required />
+      <button class="btn btn-primary" onclick="login()">Login</button>
+      <p class="toggle-text">Belum punya akun? <a onclick="toggleForms()">Daftar di sini</a></p>
     </div>
+  </div>
 
-    <!-- Header -->
-    <header class="text-center">
-        <h1>Welcome to Athaya's Library</h1>
-        <p>Explore knowledge and share your thoughts!</p>
-        <p>Kerjasama 
-          <a href="https://library.usu.ac.id" target="_blank">Perpustakaan Universitas Sumatera Utara</a></p>
-    </header>
+  <script>
+    function toggleForms() {
+      document.getElementById('login-section').classList.toggle('hidden');
+      document.getElementById('register-section').classList.toggle('hidden');
+      clearMessages();
+      clearInputs();
+    }
 
-    <!-- Banner Event Kecil -->
-    <div class="event-banner text-center my-4">
-      <a href="event.html" class="event-link" title="Info lengkap Olimpiade Sastra 2025 dan hitung mundur acara">
-        <strong>📢 Olimpiade Sastra 2025 - Klik untuk info lengkap & countdown!</strong>
-      </a>
-    </div>
+    function clearMessages() {
+      document.getElementById('auth-message').textContent = '';
+      document.getElementById('auth-message-login').textContent = '';
+    }
 
-    <!-- Visitor Form and Suggestion Box -->
-    <div class="container mt-5">
-        <div class="row">
-            <!-- Visitor Form -->
-            <div class="col-md-6">
-                <h2>Visitor Form</h2>
-                <form action="https://formspree.io/f/mjkykndy" method="POST">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name:</label>
-                        <input type="text" id="name" name="name" class="form-control" required />
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email:</label>
-                        <input type="email" id="email" name="email" class="form-control" required />
-                    </div>
-                    <div class="mb-3">
-                        <label for="number" class="form-label">Contact Number:</label>
-                        <input type="tel" id="number" name="number" placeholder="+62..." class="form-control" required />
-                    </div>
-                    <div class="mb-3">
-                        <label for="address" class="form-label">Address:</label>
-                        <textarea id="address" name="address" rows="4" class="form-control"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send</button>
-                </form>
-            </div>
+    function clearInputs() {
+      ['reg-username', 'reg-password', 'reg-password-confirm', 'login-username', 'login-password'].forEach(id => {
+        document.getElementById(id).value = '';
+      });
+    }
 
-            <!-- Suggestion Box -->
-            <div class="col-md-6">
-                <h2>Suggestion Box</h2>
-                <form action="https://formspree.io/f/xgvavgqq" method="POST">
-                    <div class="mb-3">
-                        <label for="" class="form-label">Your Email:</label>
-                        <input type="email" name="email" class="form-control" />
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Your Message:</label>
-                        <textarea name="message" rows="4" class="form-control"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-success">Click Here</button>
-                </form>
-            </div>
-        </div>
-    </div>
+    function register() {
+      clearMessages();
+      const username = document.getElementById('reg-username').value.trim();
+      const password = document.getElementById('reg-password').value;
+      const passwordConfirm = document.getElementById('reg-password-confirm').value;
+      const msg = document.getElementById('auth-message');
 
-    <!-- Login & Daftar -->
-    <div id="auth-container" class="container mt-5 p-4 bg-light rounded shadow-sm">
-        <div id="register-section">
-            <h2 class="mb-4 text-center">Daftar</h2>
-            <div id="auth-message" class="text-danger text-center mb-3"></div>
-            <input type="text" id="reg-username" class="form-control mb-3" placeholder="Username" required>
-            <input type="password" id="reg-password" class="form-control mb-3" placeholder="Password" required>
-            <input type="password" id="reg-password-confirm" class="form-control mb-3" placeholder="Konfirmasi Password" required>
-            <button class="btn btn-primary w-100" onclick="register()">Daftar</button>
-            <p class="text-center mt-3">Sudah punya akun? <a href="#" onclick="toggleForms(event)">Login di sini</a></p>
-        </div>
+      if (!username || !password || !passwordConfirm) {
+        msg.textContent = 'Semua kolom harus diisi.';
+        return;
+      }
+      if (password !== passwordConfirm) {
+        msg.textContent = 'Password dan konfirmasi tidak cocok.';
+        return;
+      }
+      if (localStorage.getItem('user_' + username)) {
+        msg.textContent = 'Username sudah terdaftar.';
+        return;
+      }
+      localStorage.setItem('user_' + username, password);
+      alert('Pendaftaran berhasil! Silakan login.');
+      toggleForms();
+    }
 
-        <div id="login-section" class="hidden">
-            <h2 class="mb-4 text-center">Login</h2>
-            <div id="auth-message-login" class="text-danger text-center mb-3"></div>
-            <input type="text" id="login-username" class="form-control mb-3" placeholder="Username" required>
-            <input type="password" id="login-password" class="form-control mb-3" placeholder="Password" required>
-            <button class="btn btn-primary w-100" onclick="login()">Login</button>
-            <p class="text-center mt-3">Belum punya akun? <a href="#" onclick="toggleForms(event)">Daftar di sini</a></p>
-        </div>
+    function login() {
+      clearMessages();
+      const username = document.getElementById('login-username').value.trim();
+      const password = document.getElementById('login-password').value;
+      const msg = document.getElementById('auth-message-login');
 
-        <div id="welcome-section" class="hidden text-center">
-            <h2>Selamat datang, <span id="user-name"></span>!</h2>
-            <button class="btn btn-danger mt-3" onclick="logout()">Logout</button>
-        </div>
-    </div>
+      if (!username || !password) {
+        msg.textContent = 'Semua kolom harus diisi.';
+        return;
+      }
+      const storedPassword = localStorage.getItem('user_' + username);
+      if (storedPassword === null) {
+        msg.textContent = 'Username tidak ditemukan.';
+        return;
+      }
+      if (storedPassword !== password) {
+        msg.textContent = 'Password salah.';
+        return;
+      }
+      // Simpan status login dan redirect ke homepage
+      localStorage.setItem('loggedInUser', username);
+      window.location.href = 'homepage.html';
+    }
 
-    <!-- Forum Diskusi -->
-    <div id="forum-container" class="container mt-5 p-4 bg-white rounded shadow-sm">
-        <h2 class="mb-4 text-center">Forum Diskusi</h2>
-        <div id="forum-messages" style="max-height: 300px; overflow-y: auto; background: #f8f9fa; border-radius: 8px; padding: 15px; border: 1px solid #ddd;">
-            <!-- Pesan akan muncul di sini -->
-        </div>
-        <textarea id="forum-input" class="form-control mt-3" rows="3" placeholder="Tulis pesan..."></textarea>
-        <button class="btn btn-primary w-100 mt-2" onclick="postMessage()">Kirim</button>
-    </div>
+    // Jika sudah login, langsung redirect ke homepage
+    window.onload = function() {
+      if(localStorage.getItem('loggedInUser')) {
+        window.location.href = 'homepage.html';
+      }
+    }
+  </script>
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="./script.js"></script>
-
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-consent-banner" style="display:none; position: fixed; bottom: 0; left: 0; right: 0; background: #333; color: white; padding: 15px; text-align: center; z-index: 9999;">
-      Website ini menggunakan cookie untuk meningkatkan pengalaman Anda.
-      <button id="accept-cookie" style="margin-left: 15px; padding: 5px 10px; background: #4CAF50; border: none; color: white; cursor: pointer; border-radius: 4px; font-weight: 600;">Terima</button>
-      <button id="manage-cookie" style="margin-left: 10px; padding: 5px 10px; background: #555; border: none; color: white; cursor: pointer; border-radius: 4px; font-weight: 600;">Kelola</button>
-    </div>
 </body>
 </html>

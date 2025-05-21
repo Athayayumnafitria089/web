@@ -39,6 +39,7 @@ nav {
   background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background for better visibility */
   padding: 10px; /* Add some padding around the nav */
   border-radius: 5px; /* Optional: Rounded corners */
+  z-index: 1000;
 }
 
 nav ul {
@@ -56,6 +57,12 @@ nav ul li a {
   text-decoration: none;
   color: white; /* Keep original text color */
   font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #e1306c;
 }
 
 /* Tombol On/Off Suara (Ikon 🔊/🔇) */
@@ -64,9 +71,9 @@ nav ul li a {
   background-color: transparent; /* Tanpa latar belakang */
   border: none; /* Tanpa border */
   cursor: pointer; /* Menampilkan kursor pointer saat hover */
+  transition: color 0.3s ease;
 }
 
-/* Efek hover pada tombol suara (ikon) */
 #toggle-sound:hover {
   color: #4CAF50; /* Ubah warna ikon saat hover menjadi hijau */
 }
@@ -91,6 +98,7 @@ section#about-details {
 table {
   border-collapse: collapse; /* Merge table borders for cleaner look */
   width: 50%; /* Set table width to half of the container width */
+  margin: 0 auto;
 }
 
 th, td {
@@ -131,6 +139,13 @@ th {
   padding:.5em .75em;
   background-color:#4CAF50;
   color:white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.read-button:hover {
+  background-color: #45a049;
 }
 
 /* Visitor Form and Suggestion Box Styling - Tambahan Baru untuk Bootstrap Grid*/
@@ -145,6 +160,8 @@ form h2 {
 button.btn-primary {
   background-color:#4CAF50; /* Hijau sesuai tema */ 
   border-color:#4CAF50; /* Warna border tombol hijau */ 
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 button.btn-primary:hover {
@@ -153,6 +170,8 @@ button.btn-primary:hover {
 
 button.btn-success {
   background-color:#ff7e5f; /* Warna tombol sesuai gradien tema */ 
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 button.btn-success:hover {
