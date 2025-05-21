@@ -74,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function () {
 // Cookie Consent Banner
 // ===================
 
-// Fungsi menampilkan banner jika belum setuju cookie
 function checkCookieConsent() {
     if (getCookie("cookieConsent") !== "accepted") {
         const banner = document.getElementById("cookie-consent-banner");
@@ -82,20 +81,16 @@ function checkCookieConsent() {
     }
 }
 
-// Fungsi menyimpan persetujuan cookie
 function acceptCookieConsent() {
     setCookie("cookieConsent", "accepted", 365);
     const banner = document.getElementById("cookie-consent-banner");
     if (banner) banner.style.display = "none";
 }
 
-// Fungsi tombol Kelola cookie
 function manageCookieConsent() {
-    // Contoh: arahkan ke halaman pengaturan cookie
     window.location.href = "cookie-settings.html";
 }
 
-// Event listener saat DOM siap
 document.addEventListener('DOMContentLoaded', () => {
     checkCookieConsent();
 
@@ -112,8 +107,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ======= Login & Daftar Sederhana dengan localStorage =======
 
+// Fungsi toggle form login/daftar modal
 function toggleForms(event) {
-  event.preventDefault();
+  if(event) event.preventDefault();
   clearMessages();
   clearInputs();
   document.getElementById('register-section').classList.toggle('hidden');
@@ -121,6 +117,7 @@ function toggleForms(event) {
   document.getElementById('welcome-section').classList.add('hidden');
 }
 
+// Bersihkan pesan error
 function clearMessages() {
   const regMsg = document.getElementById('auth-message');
   const loginMsg = document.getElementById('auth-message-login');
@@ -128,6 +125,7 @@ function clearMessages() {
   if (loginMsg) loginMsg.textContent = '';
 }
 
+// Bersihkan input form
 function clearInputs() {
   const ids = ['reg-username', 'reg-password', 'reg-password-confirm', 'login-username', 'login-password'];
   ids.forEach(id => {
@@ -136,6 +134,7 @@ function clearInputs() {
   });
 }
 
+// Fungsi register user baru
 function register() {
   clearMessages();
 
@@ -162,9 +161,10 @@ function register() {
   localStorage.setItem('user_' + username, password);
 
   alert('Pendaftaran berhasil! Silakan login.');
-  toggleForms(new Event('click'));
+  toggleForms();
 }
 
+// Fungsi login user
 function login() {
   clearMessages();
 
@@ -197,8 +197,10 @@ function login() {
 
   saveLoggedInUser(username);
   loadMessages();
+  showMainContent();
 }
 
+// Fungsi logout user
 function logout() {
   document.getElementById('welcome-section').classList.add('hidden');
   document.getElementById('register-section').classList.remove('hidden');
@@ -207,6 +209,29 @@ function logout() {
 
   clearLoggedInUser();
   document.getElementById('forum-messages').innerHTML = '<p class="text-muted text-center">Silakan login untuk melihat pesan forum.</p>';
+  hideMainContent();
+  showAuthModal();
+}
+
+// ======= Fungsi tampil/sembunyi modal dan konten utama =======
+function showAuthModal() {
+  const modal = document.getElementById('auth-modal');
+  if(modal) modal.style.display = 'flex';
+}
+
+function hideAuthModal() {
+  const modal = document.getElementById('auth-modal');
+  if(modal) modal.style.display = 'none';
+}
+
+function showMainContent() {
+  const main = document.getElementById('main-content');
+  if(main) main.style.display = 'block';
+}
+
+function hideMainContent() {
+  const main = document.getElementById('main-content');
+  if(main) main.style.display = 'none';
 }
 
 // ======= Forum Diskusi Sederhana dengan localStorage =======
@@ -270,6 +295,7 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
+// ======= Simpan dan ambil user yang login dari localStorage =======
 function saveLoggedInUser(username) {
   localStorage.setItem('loggedInUser', username);
 }
@@ -282,10 +308,20 @@ function getLoggedInUser() {
   return localStorage.getItem('loggedInUser');
 }
 
+// ======= Inisialisasi saat halaman dimuat =======
 document.addEventListener('DOMContentLoaded', () => {
-  if (getLoggedInUser()) {
+  const loggedInUser = getLoggedInUser();
+  if (loggedInUser) {
+    document.getElementById('user-name').textContent = loggedInUser;
+    document.getElementById('register-section').classList.add('hidden');
+    document.getElementById('login-section').classList.add('hidden');
+    document.getElementById('welcome-section').classList.remove('hidden');
     loadMessages();
+    showMainContent();
+    hideAuthModal();
   } else {
-    document.getElementById('forum-messages').innerHTML = '<p class="text-muted text-center">Silakan login untuk melihat pesan forum.</p>';
+    // User belum login, tampilkan modal dan sembunyikan konten utama
+    showAuthModal();
+    hideMainContent();
   }
 });

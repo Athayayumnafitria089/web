@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="style.css" />
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      /* Tambahan CSS untuk Login & Forum */
+      .hidden { display: none !important; }
+      #auth-container { max-width: 600px; margin: 20px auto; }
+      #forum-messages div { 
+        background: #fff; 
+        padding: 10px; 
+        border-radius: 8px; 
+        margin-bottom: 10px; 
+        border: 1px solid #ddd;
+      }
+    </style>
 </head>
 <body>
 
@@ -25,7 +37,7 @@
         </ul>
     </nav>
 
-    <!-- Tombol On/Off Suara (dipindahkan di bawah navbar) -->
+    <!-- Tombol On/Off Suara -->
     <div class="text-center mb-4">
         <button id="toggle-sound" style="font-size: 24px; background: none; border: none; cursor: pointer;">
             🔊
@@ -92,63 +104,42 @@
         </div>
     </div>
 
-    <!-- Bagian Visitor Form and Suggestion Box sudah ada di atas -->
+    <!-- Login & Daftar -->
+    <div id="auth-container" class="container mt-5 p-4 bg-light rounded shadow-sm">
+        <div id="register-section">
+            <h2 class="mb-4 text-center">Daftar</h2>
+            <div id="auth-message" class="text-danger text-center mb-3"></div>
+            <input type="text" id="reg-username" class="form-control mb-3" placeholder="Username" required>
+            <input type="password" id="reg-password" class="form-control mb-3" placeholder="Password" required>
+            <input type="password" id="reg-password-confirm" class="form-control mb-3" placeholder="Konfirmasi Password" required>
+            <button class="btn btn-primary w-100" onclick="register()">Daftar</button>
+            <p class="text-center mt-3">Sudah punya akun? <a href="#" onclick="toggleForms(event)">Login di sini</a></p>
+        </div>
 
-<!-- ======= Form Login & Daftar ======= -->
-<div id="auth-container" class="container mt-5 p-4 bg-light rounded shadow-sm" style="max-width:600px;">
-  <!-- Daftar -->
-  <div id="register-section">
-    <h2 class="mb-4 text-center">Daftar</h2>
-    <div id="auth-message" class="text-danger text-center mb-3"></div>
-    <div class="mb-3">
-      <input type="text" id="reg-username" class="form-control" placeholder="Username" required />
-    </div>
-    <div class="mb-3">
-      <input type="password" id="reg-password" class="form-control" placeholder="Password" required />
-    </div>
-    <div class="mb-3">
-      <input type="password" id="reg-password-confirm" class="form-control" placeholder="Konfirmasi Password" required />
-    </div>
-    <button class="btn btn-primary w-100" onclick="register()">Daftar</button>
-    <p class="text-center mt-3">
-      Sudah punya akun? <a href="#" onclick="toggleForms(event)">Login di sini</a>
-    </p>
-  </div>
+        <div id="login-section" class="hidden">
+            <h2 class="mb-4 text-center">Login</h2>
+            <div id="auth-message-login" class="text-danger text-center mb-3"></div>
+            <input type="text" id="login-username" class="form-control mb-3" placeholder="Username" required>
+            <input type="password" id="login-password" class="form-control mb-3" placeholder="Password" required>
+            <button class="btn btn-primary w-100" onclick="login()">Login</button>
+            <p class="text-center mt-3">Belum punya akun? <a href="#" onclick="toggleForms(event)">Daftar di sini</a></p>
+        </div>
 
-  <!-- Login -->
-  <div id="login-section" class="hidden">
-    <h2 class="mb-4 text-center">Login</h2>
-    <div id="auth-message-login" class="text-danger text-center mb-3"></div>
-    <div class="mb-3">
-      <input type="text" id="login-username" class="form-control" placeholder="Username" required />
+        <div id="welcome-section" class="hidden text-center">
+            <h2>Selamat datang, <span id="user-name"></span>!</h2>
+            <button class="btn btn-danger mt-3" onclick="logout()">Logout</button>
+        </div>
     </div>
-    <div class="mb-3">
-      <input type="password" id="login-password" class="form-control" placeholder="Password" required />
+
+    <!-- Forum Diskusi -->
+    <div id="forum-container" class="container mt-5 p-4 bg-white rounded shadow-sm">
+        <h2 class="mb-4 text-center">Forum Diskusi</h2>
+        <div id="forum-messages" style="max-height: 300px; overflow-y: auto; background: #f8f9fa; border-radius: 8px; padding: 15px; border: 1px solid #ddd;">
+            <!-- Pesan akan muncul di sini -->
+        </div>
+        <textarea id="forum-input" class="form-control mt-3" rows="3" placeholder="Tulis pesan..."></textarea>
+        <button class="btn btn-primary w-100 mt-2" onclick="postMessage()">Kirim</button>
     </div>
-    <button class="btn btn-primary w-100" onclick="login()">Login</button>
-    <p class="text-center mt-3">
-      Belum punya akun? <a href="#" onclick="toggleForms(event)">Daftar di sini</a>
-    </p>
-  </div>
-
-  <!-- Welcome Section -->
-  <div id="welcome-section" class="hidden text-center">
-    <h2>Selamat datang, <span id="user-name"></span>!</h2>
-    <button class="btn btn-danger mt-3" onclick="logout()">Logout</button>
-  </div>
-</div>
-
-<!-- ======= Forum Diskusi ======= -->
-<div id="forum-container" class="container mt-5 p-4 bg-white rounded shadow-sm" style="max-width:700px;">
-  <h2 class="mb-4 text-center">Forum Diskusi</h2>
-  <div id="forum-messages" style="max-height:300px; overflow-y:auto; border:1px solid #ccc; padding:15px; border-radius:6px; background:#f9f9f9;">
-    <!-- Pesan akan muncul di sini -->
-  </div>
-  <div class="mt-3">
-    <textarea id="forum-input" class="form-control" rows="3" placeholder="Tulis pesan diskusi di sini..."></textarea>
-    <button class="btn btn-primary mt-2 w-100" onclick="postMessage()">Kirim Pesan</button>
-  </div>
-</div>
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
