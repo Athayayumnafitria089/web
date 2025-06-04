@@ -109,3 +109,90 @@ document.addEventListener('DOMContentLoaded', () => {
         manageBtn.addEventListener("click", manageCookieConsent);
     }
 });
+
+// ===== Forum Diskusi =====
+
+const forumForm = document.getElementById('forum-form');
+const forumMessagesContainer = document.getElementById('forum-messages');
+
+// Fungsi untuk format waktu sederhana
+function formatDate(date) {
+  const d = new Date(date);
+  return d.toLocaleString('id-ID', { dateStyle: 'medium', timeStyle: 'short' });
+}
+
+// Fungsi render pesan forum
+function renderForumMessages() {
+  const messages = JSON.parse(localStorage.getItem('forumMessages')) || [];
+  forumMessagesContainer.innerHTML = '';
+
+  if (messages.length === 0) {
+    forumMessagesContainer.innerHTML = '<p>Belum ada pesan. Jadilah yang pertama mengirim pesan!</p>';
+    return;
+  }
+
+  messages.forEach(msg => {
+    const msgDiv = document.createElement('div');
+    msgDiv.classList.add('forum-message');
+
+    msgDiv.innerHTML = `
+      <div class="author">${escapeHTML(msg.name)}</div>
+      <div class="time">${formatDate(msg.timestamp)}</div>
+      <div class="text">${escapeHTML(msg.message).replace(/\n/g, '<br>')}</div>
+    `;
+
+    forumMessagesContainer.appendChild(msgDiv);
+  });
+}
+
+// Fungsi escape HTML untuk keamanan XSS
+function escapeHTML(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+// Event submit form forum
+if (forumForm) {
+  forumForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const nameInput = document.getElementById('forum-name');
+    const messageInput = document.getElementById('forum-message');
+
+    const name = nameInput.value.trim();
+    const message = messageInput.value.trim();
+
+    if (name === '' || message === '') {
+      alert('Nama dan pesan tidak boleh kosong!');
+      return;
+    }
+
+    // Ambil pesan lama dari localStorage
+    const messages = JSON.parse(localStorage.getItem('forumMessages')) || [];
+
+    // Tambah pesan baru
+    messages.push({
+      name: name,
+      message: message,
+      timestamp: new Date().toISOString()
+    });
+
+    // Simpan kembali ke localStorage
+    localStorage.setItem('forumMessages', JSON.stringify(messages));
+
+    // Reset form
+    forumForm.reset();
+
+    // Render ulang pesan
+    renderForumMessages();
+
+    // Scroll ke bawah otomatis
+    forumMessagesContainer.scrollTop = forumMessagesContainer.scrollHeight;
+  });
+}
+
+// Render pesan saat halaman dimuat
+document.addEventListener('DOMContentLoaded', () => {
+  renderForumMessages();
+});

@@ -403,3 +403,86 @@ nav ul li a.active {
 #cookie-consent-banner #manage-cookie:hover {
   background: #444;
 }
+
+/* ===================== */
+/* FORUM DISKUSI */
+/* ===================== */
+#forum {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+#forum h2 {
+  color: #e1306c;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+#forum-form button.btn-primary {
+  background-color: #e1306c;
+  border-color: #e1306c;
+  font-weight: 600;
+}
+
+#forum-form button.btn-primary:hover {
+  background-color: #ad1457;
+  border-color: #ad1457;
+}
+
+.forum-messages {
+  max-height: 400px;
+  overflow-y: auto;
+  border-top: 2px solid #e1306c;
+  padding-top: 15px;
+}
+
+.forum-message {
+  background-color: #fff0f6;
+  border: 1px solid #e1306c;
+  border-radius: 12px;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(225, 48, 108, 0.25);
+}
+
+.forum-message .author {
+  font-weight: 700;
+  color: #ad1457;
+  margin-bottom: 5px;
+}
+
+.forum-message .time {
+  font-size: 0.8rem;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+.forum-message .text {
+  white-space: pre-wrap; /* agar enter di pesan tetap tampil */
+  font-size: 1rem;
+}
+
+/* Scrollbar custom untuk forum messages */
+.forum-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.forum-messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.forum-messages::-webkit-scrollbar-thumb {
+  background: #e1306c;
+  border-radius: 10px;
+}
+
+.forum-messages::-webkit-scrollbar-thumb:hover {
+  background: #ad1457;
+}
